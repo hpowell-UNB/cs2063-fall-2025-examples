@@ -1,1 +1,1 @@
-# cs2063-fall-2025-examples
+# CS2063 - Fall 2025 - Course Examples
