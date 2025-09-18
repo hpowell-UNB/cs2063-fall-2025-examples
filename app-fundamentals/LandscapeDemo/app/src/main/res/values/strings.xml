@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Landscape Demo</string>
+    <string name="portrait_mode">Portrait Mode</string>
+    <string name="landscape_mode">Landscape Mode</string>
+    <string name="show_orientation_mode">Show Orientation Mode</string>
+    <string name="running_in_portrait_mode">Running in Portrait Mode</string>
+    <string name="running_in_landscape_mode">Running in Landscape Mode</string>
+</resources>
