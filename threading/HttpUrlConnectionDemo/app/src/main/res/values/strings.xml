@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HttpUrlConnection Demo</string>
+    <string name="country_name">Country Name</string>
+    <string name="capital_city">Capital City</string>
+    <string name="continent_name">Continent Name</string>
+    <string name="country_listing">Country Listing</string>
+</resources>
