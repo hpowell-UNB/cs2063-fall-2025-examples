@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main">
+
+    <TextView
+        android:id="@+id/high_score_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"/>
+
+    <TextView
+        android:id="@+id/highScoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/high_score_label"
+        android:layout_toEndOf="@id/high_score_label"
+        android:textSize="24sp"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"/>
+
+    <TextView
+        android:id="@+id/gameScoreText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:textAppearance="@android:style/TextAppearance.Material.Display1"/>
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:padding="20dp"
+        android:text="@string/reset"
+        android:textAppearance="@android:style/TextAppearance.Material.Large">
+    </Button>
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/resetButton"
+        android:padding="20dp"
+        android:text="@string/play_game"
+        android:textAppearance="@android:style/TextAppearance.Material.Large">
+    </Button>
+
+</RelativeLayout>

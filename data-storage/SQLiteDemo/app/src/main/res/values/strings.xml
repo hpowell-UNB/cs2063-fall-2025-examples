@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SQLite Demo</string>
+    <string name="enter_item">Enter an Item</string>
+    <string name="enter_number">Enter a Number</string>
+    <string name="add_item">Add Item</string>
+    <string name="dialog_button_add">Add</string>
+    <string name="dialog_button_cancel">Cancel</string>
+</resources>

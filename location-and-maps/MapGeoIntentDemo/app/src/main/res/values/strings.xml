@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Map GeoIntent Demo</string>
+    <string name="location">Location</string>
+    <string name="show_map">Show Map</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Read Write Internal Storage Demo</string>
+    <string name="lbl_file_name">File Name</string>
+    <string name="lbl_file_data">File Data</string>
+    <string name="lbl_enter_name_hint">Enter File Name</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_view">View</string>
+    <string name="err_file_name">Please enter a file name</string>
+    <string name="err_file_data">"Please enter file content"</string>
+    <string name="lbl_data_saved">"Data saved to the file"</string>
+</resources>
