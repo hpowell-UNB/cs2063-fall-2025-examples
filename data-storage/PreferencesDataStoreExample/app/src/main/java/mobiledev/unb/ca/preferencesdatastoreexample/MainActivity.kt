@@ -8,12 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var sharedPreferencesManager: SharedPreferencesManager
     private lateinit var highScoreTextView: TextView
     private lateinit var gameScoreTextView: TextView
 
@@ -30,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         initSharedPreferences()
 
         highScoreTextView = findViewById(R.id.highScoreText)
-        setHighScoreText(readHighScoreFromSharedPreferences())
+        lifecycleScope.launch {
+            setHighScoreText(readHighScoreFromSharedPreferences())
+        }
 
         gameScoreTextView = findViewById(R.id.gameScoreText)
         setGameScoreText(INITIAL_HIGH_SCORE)
@@ -50,10 +52,12 @@ class MainActivity : AppCompatActivity() {
         val randomScore = Random.nextInt(1000)
         setGameScoreText(randomScore)
 
-        val currHighScore = readHighScoreFromSharedPreferences()
-        if (randomScore > currHighScore) {
-            writeHighScoreToSharedPreferences(randomScore)
-            setHighScoreText(randomScore)
+        lifecycleScope.launch {
+            val currHighScore = readHighScoreFromSharedPreferences()
+            if (randomScore > currHighScore) {
+                writeHighScoreToSharedPreferences(randomScore)
+                setHighScoreText(randomScore)
+            }
         }
     }
 
@@ -66,26 +70,22 @@ class MainActivity : AppCompatActivity() {
 
     // Shared Preferences Helper Functions
     private fun initSharedPreferences() {
-        sharedPreferencesManager = SharedPreferencesManager(applicationContext)
+        SharedPreferencesManager.init(applicationContext.appPreferencesDataStore)
     }
 
-    private fun readHighScoreFromSharedPreferences(): Int = runBlocking {
-        // Alternate way to read the value; be careful with runBlocking
-
-        // If you need to read the value synchronously for initialization
-        // and are certain the DataStore operation will be quick
-        // (e.g., during startup and the preference file is small),
-        // you can use runBlocking and first() on the Flow.
-        // This is generally discouraged for UI-related
-        // operations as it can block the main thread.
-        sharedPreferencesManager.getHighScore()
+    private suspend fun readHighScoreFromSharedPreferences(): Int {
+        return withContext(Dispatchers.IO) {
+            // val highScore: Int = sharedPreferencesManager.getHighScore()
+            val highScore: Int = SharedPreferencesManager.getIntValue(KEY_NAME_HIGH_SCORE)
+            highScore
+        }
     }
 
     private fun writeHighScoreToSharedPreferences(score: Int) {
         // Since the saveHighScore() is a suspend function,
         // it has to be launched in a coroutine scope
         lifecycleScope.launch {
-            sharedPreferencesManager.saveHighScore(score)
+            SharedPreferencesManager.saveIntValue(KEY_NAME_HIGH_SCORE, score)
         }
     }
 
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
         // Since the clearHighScore() is a suspend function,
         // it has to be launched in a coroutine scope
         lifecycleScope.launch {
-            sharedPreferencesManager.clearHighScore()
+            SharedPreferencesManager.clearIntValue(KEY_NAME_HIGH_SCORE)
         }
     }
 
@@ -106,6 +106,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
+        private const val KEY_NAME_HIGH_SCORE = "HIGH_SCORE"
         private const val INITIAL_HIGH_SCORE = 0
     }
 }

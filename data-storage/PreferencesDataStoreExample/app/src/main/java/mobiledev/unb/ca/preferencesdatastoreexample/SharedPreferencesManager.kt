@@ -1,38 +1,39 @@
 package mobiledev.unb.ca.preferencesdatastoreexample
 
-import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
-val Context.myDataStore by preferencesDataStore(name = "app_preferences")
+object SharedPreferencesManager {
+    private lateinit var dataStore: DataStore<Preferences>
 
-class SharedPreferencesManager(private val context: Context) {
-    // Create keys to store and retrieve the data
-    companion object {
-        val HIGH_SCORE_KEY = intPreferencesKey("HIGH_SCORE")
+    private fun getIntKeyName(key: String): Preferences.Key<Int> {
+        return intPreferencesKey(key)
     }
 
-    // Save the high score value
-    suspend fun saveHighScore(score: Int) {
-        context.myDataStore.edit { preferences ->
-            preferences[HIGH_SCORE_KEY] = score
+    suspend fun saveIntValue(key: String, value: Int) {
+        dataStore.edit {  preferences ->
+            preferences[getIntKeyName(key)] = value
         }
     }
 
-    suspend fun getHighScore(): Int {
+    suspend fun getIntValue(key: String): Int {
         // Collect the first emitted value and then complete
-        return context.myDataStore.data
+        return dataStore.data
             .map { preferences ->
-                preferences[HIGH_SCORE_KEY]
+                preferences[getIntKeyName(key)]
             }
             .first() ?: 0
     }
 
-    // Clear the high score value
-    suspend fun clearHighScore() {
-        context.myDataStore.edit { preferences -> preferences.remove(HIGH_SCORE_KEY) }
+    suspend fun clearIntValue(key: String) {
+        dataStore.edit { preferences -> preferences.remove(getIntKeyName(key)) }
+    }
+
+    fun init(dataStore: DataStore<Preferences>) {
+        this.dataStore = dataStore
     }
 }

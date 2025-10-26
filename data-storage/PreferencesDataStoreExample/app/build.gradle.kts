@@ -44,5 +44,4 @@ dependencies {
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.datastore.core)
     implementation(libs.androidx.lifecycle)
-    implementation(libs.androidx.lifecycle)
 }

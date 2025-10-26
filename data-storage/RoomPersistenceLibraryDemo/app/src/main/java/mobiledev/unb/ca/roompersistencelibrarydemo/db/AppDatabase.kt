@@ -15,10 +15,10 @@ import mobiledev.unb.ca.roompersistencelibrarydemo.entities.Item
  * Database layer in top of the SQLite database
  */
 @Database(entities = [Item::class], version = 1, exportSchema = false)
-abstract class ItemRoomDatabase : RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
     abstract fun itemDao(): ItemDao
 
-    private class ItemDatabaseCallback(
+    private class AppDatabaseCallback(
         private val scope: CoroutineScope
     ) : Callback() {
 
@@ -38,12 +38,12 @@ abstract class ItemRoomDatabase : RoomDatabase() {
         // Singleton prevents multiple instances of database opening at the
         // same time.
         @Volatile
-        private var INSTANCE: ItemRoomDatabase? = null
+        private var INSTANCE: AppDatabase? = null
 
         fun getDatabase(
             context: Context,
             scope: CoroutineScope
-        ): ItemRoomDatabase {
+        ): AppDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
                 return tempInstance
@@ -52,9 +52,9 @@ abstract class ItemRoomDatabase : RoomDatabase() {
             synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    ItemRoomDatabase::class.java,
-                    "item_database"
-                ).addCallback(ItemDatabaseCallback(scope))
+                    AppDatabase::class.java,
+                    "app_database"
+                ).addCallback(AppDatabaseCallback(scope))
                     .build()
 
                 INSTANCE = instance

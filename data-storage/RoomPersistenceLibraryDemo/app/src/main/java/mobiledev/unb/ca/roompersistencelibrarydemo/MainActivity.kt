@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         val alertDialog = builder.create()
-        alertDialog.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+        alertDialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
         alertDialog.show()
     }
 
