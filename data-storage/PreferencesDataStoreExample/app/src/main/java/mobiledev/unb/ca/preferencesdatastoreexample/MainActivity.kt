@@ -75,7 +75,6 @@ class MainActivity : AppCompatActivity() {
 
     private suspend fun readHighScoreFromSharedPreferences(): Int {
         return withContext(Dispatchers.IO) {
-            // val highScore: Int = sharedPreferencesManager.getHighScore()
             val highScore: Int = SharedPreferencesManager.getIntValue(KEY_NAME_HIGH_SCORE)
             highScore
         }
