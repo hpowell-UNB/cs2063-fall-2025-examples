@@ -3,4 +3,5 @@
     <string name="get_location">Get Location</string>
     <string name="fetch_location_error">Unable to fetch the location</string>
     <string name="location_details">Latitude: %1$s\n\nLongitude: %2$s\n\nAccuracy: %3$s</string>
+    <string name="permission_denied">Permission Denied</string>
 </resources>
