@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Sensor Demo</string>
+    <string name="accelerometer_error">No accelerometer available</string>
+    <string name="no_filter_message">No filter - Long press to change filter</string>
+    <string name="lowpass_filter_message">Low-pass filter - Long press to change filter</string>
+    <string name="highpass_filter_message">High-pass filter - Long press to change filter</string>
+    <string name="lbl_tap_to_create_ball">Tap To Create Ball</string>
+</resources>

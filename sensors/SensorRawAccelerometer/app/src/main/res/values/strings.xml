@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Sensor Raw Accelerometer</string>
+    <string name="raw_x_string">Raw X Value:</string>
+    <string name="raw_y_string">Raw Y Value:</string>
+    <string name="raw_z_string">Raw Z Value:</string>
+</resources>

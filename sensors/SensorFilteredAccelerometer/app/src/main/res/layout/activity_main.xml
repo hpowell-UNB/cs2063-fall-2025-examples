@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp">
+
+        <TextView
+            android:text="@string/raw_x_string"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/x_value_view"
+            android:textAppearance="@android:style/TextAppearance.Material.Large" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp">
+
+        <TextView
+            android:text="@string/raw_y_string"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/y_value_view"
+            android:textAppearance="@android:style/TextAppearance.Material.Large" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp">
+
+        <TextView
+            android:text="@string/raw_z_string"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/z_value_view"
+            android:paddingBottom="10dp"
+            android:textAppearance="@android:style/TextAppearance.Material.Large" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp">
+
+        <TextView
+            android:text="@string/lowpass_x_string"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/x_lowpass_view"
+            android:textAppearance="@android:style/TextAppearance.Material.Large" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp">
+
+        <TextView
+            android:text="@string/lowpass_y_string"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/y_lowpass_view"
+            android:textAppearance="@android:style/TextAppearance.Material.Large" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp">
+
+        <TextView
+            android:text="@string/lowpass_z_string"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/z_lowpass_view"
+            android:paddingBottom="10dp"
+            android:textAppearance="@android:style/TextAppearance.Material.Large" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp">
+
+        <TextView
+            android:text="@string/highpass_x_string"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/x_highpass_view"
+            android:textAppearance="@android:style/TextAppearance.Material.Large" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp">
+
+        <TextView
+            android:text="@string/highpass_y_string"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/y_highpass_view"
+            android:textAppearance="@android:style/TextAppearance.Material.Large" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp">
+
+        <TextView
+            android:text="@string/highpass_z_string"
+            android:textAppearance="@android:style/TextAppearance.Material.Large"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/z_highpass_view"
+            android:textAppearance="@android:style/TextAppearance.Material.Large" />
+    </TableRow>
+
+</TableLayout>

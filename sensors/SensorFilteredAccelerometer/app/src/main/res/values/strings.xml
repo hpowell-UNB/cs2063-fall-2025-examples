@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Sensor Filtered Accelerometer</string>
+    <string name="raw_x_string">Raw X Value:</string>
+    <string name="raw_y_string">Raw Y Value:</string>
+    <string name="raw_z_string">Raw Z Value:</string>
+    <string name="lowpass_x_string">Low Pass X:</string>
+    <string name="lowpass_y_string">Low Pass Y:</string>
+    <string name="lowpass_z_string">Low Pass Z:</string>
+    <string name="highpass_x_string">High Pass X:</string>
+    <string name="highpass_y_string">High Pass Y:</string>
+    <string name="highpass_z_string">High Pass Z:</string>
+</resources>
