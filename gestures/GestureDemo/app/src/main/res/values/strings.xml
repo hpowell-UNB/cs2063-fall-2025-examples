@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Gesture Demo</string>
+    <string name="lbl_on_down">onDown: \n\n
+        MotionEvent: %1$s
+    </string>
+    <string name="lbl_on_fling">onFling: \n\n
+        Motion Event 1: %1$s \n\n
+        Motion Event 2: %2$s \n\n
+        x velocity = %3$f, y velocity = %4$f
+    </string>
+    <string name="lbl_on_long_press">onLongPress: \n\n
+        MotionEvent: %1$s
+    </string>
+    <string name="lbl_on_scroll">onScroll: \n\n
+        Motion Event 1: %1$s \n\n
+        Motion Event 2: %2$s \n\n
+        x distance = %3$f, y distance = %4$f
+    </string>
+    <string name="lbl_on_show_press">onShowPress: \n\n
+        MotionEvent: %1$s
+    </string>
+    <string name="lbl_on_single_tap_up">onSingleTapUp: \n\n
+        MotionEvent: %1$s
+    </string>
+    <string name="lbl_on_double_tap">onDoubleTap: \n\n
+        MotionEvent: %1$s
+    </string>
+    <string name="lbl_on_double_tap_event">onDoubleTapEvent: \n\n
+        MotionEvent: %1$s
+    </string>
+    <string name="lbl_on_single_tap_confirmed">onSingleTapConfirmed: \n\n
+        MotionEvent: %1$s
+    </string>
+</resources>

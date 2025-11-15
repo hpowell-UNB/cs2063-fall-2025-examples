@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Canvas Demo</string>
+    <string name="tap_to_create_bubbles">Tap to Create Bubbles</string>
+</resources>

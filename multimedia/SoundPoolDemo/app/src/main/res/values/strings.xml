@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Sound Pool Demo</string>
+    <string name="play_sound_1">Play Sound 1</string>
+    <string name="play_sound_2">Play Sound 2</string>
+    <string name="play_sound_3">Play Sound 3</string>
+    <string name="play_sound_4">Play Sound 4</string>
+    <string name="play_sound_5">Play Sound 5</string>
+    <string name="play_sound_6">Play Sound 6</string>
+</resources>

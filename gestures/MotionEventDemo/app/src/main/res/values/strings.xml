@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Motion Event Demo</string>
+    <string name="action_down">Action was DOWN</string>
+    <string name="action_move">Action was MOVE</string>
+    <string name="action_up">Action was UP</string>
+    <string name="action_cancel">Action was CANCEL</string>
+    <string name="action_outside">Movement occurred outside bounds of current screen element</string>
+</resources>
