@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <TextView
+        android:id="@+id/itemText"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/numberText"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/itemText" />
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_marginTop="5dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toEndOf="@+id/numberText"
+        android:contentDescription="@string/delete_button_description"
+        app:srcCompat="@android:drawable/ic_menu_delete"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:id="@+id/cardBorder"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_alignParentBottom="true"
+        android:background="#808080"/>
+</RelativeLayout>
